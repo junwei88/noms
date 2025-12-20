@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>N O M S</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+
+</head>
+<body>
+  <h1>N O M S</h1>
+
+  <section>
+    <label for="daySelect">Select day:</label>
+    <select id="daySelect"></select>
+  </section>
+
+  <section id="categorySection">
+    <h2>Categories</h2>
+    <div id="categoryCheckboxes"></div>
+  </section>
+
+  <section id="dishesSection">
+    <h2>Dishes</h2>
+    <div id="dishSelectors"></div>
+  </section>
+
+  <button id="magicBtn">Magic!</button>
+
+  <script src="app.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>

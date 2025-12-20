@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#0f172a"></rect>
+
+  <!-- Steam (closer and larger) -->
+  <path d="M216 200c0-20 16-36 16-50" stroke="#e2e8f0" stroke-width="20" stroke-linecap="round" fill="none"></path>
+  <path d="M256 190c0-24 18-42 18-60" stroke="#f8fafc" stroke-width="20" stroke-linecap="round" fill="none"></path>
+  <path d="M296 200c0-20 16-36 16-50" stroke="#e2e8f0" stroke-width="20" stroke-linecap="round" fill="none"></path>
+
+  <!-- Bowl (larger, takes more vertical space) -->
+  <path d="M120 280h272c0 80-64 128-136 128s-136-48-136-128z" fill="#f8fafc"></path>
+
+  <!-- Bowl base -->
+  <rect x="200" y="408" width="112" height="24" rx="12" fill="#f8fafc"></rect>
+</svg>
