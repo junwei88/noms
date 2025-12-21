@@ -3,7 +3,7 @@ const PRESETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRvKk4L7G0Z
 const DISHES_URL  = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRvKk4L7G0ZMWnuv_io7YTdjTY4zq2JNdoiqbJCO96yglhumRv5BVJE2IQ7l3twZPGGW39kvJwoMcP1/pub?gid=1712157904&single=true&output=csv';
 
 const ALL_CATEGORIES = ['vegetable', 'meat', 'side', 'soup', 'one-pot'];
-const DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 // ===== STATE =====
 let presetsByDay = {};
@@ -17,6 +17,12 @@ const categoryCheckboxes = document.getElementById('categoryCheckboxes');
 const dishSelectors = document.getElementById('dishSelectors');
 const magicBtn = document.getElementById('magicBtn');
 
+// ===== DAYS HELPER =====
+function getTodayName() {
+  const todayIndex = new Date().getDay(); // 0 = Sunday
+  return todayIndex === 0 ? 'Sunday' : DAYS[todayIndex - 1];
+}
+
 // ===== INIT =====
 init();
 
@@ -28,7 +34,7 @@ async function init() {
   daySelect.addEventListener('change', onDayChange);
   magicBtn.addEventListener('click', magicPick);
 
-  daySelect.value = DAYS[0];
+  daySelect.value = getTodayName();
   onDayChange();
 }
 
