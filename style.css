@@ -93,6 +93,11 @@ label {
   margin: 0.35rem 0;
 }
 
+.dish-group {
+  margin-bottom: 0.75rem;
+}
+
+
 /* ===============================
    Select Inputs
 ================================ */

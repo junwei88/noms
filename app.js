@@ -151,7 +151,8 @@ function renderDishes() {
     .filter(cat => selectedCategories.includes(cat))
     .forEach(cat => {
     const wrapper = document.createElement('div');
-
+    wrapper.className = 'dish-group'
+    
     const title = document.createElement('h3');
     title.textContent = cat;
     wrapper.appendChild(title);
