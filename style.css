@@ -1,119 +1,171 @@
+/* ===============================
+   Design Tokens
+================================ */
 :root {
-    --bg: #f9fafb;
-    --card: #ffffff;
-    --text: #1f2933;
-    --muted: #6b7280;
-    --accent: #4f46e5;
-    --accent-hover: #4338ca;
-    --border: #e5e7eb;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    max-width: 560px;
-    margin: auto;
-    padding: 1.5rem 1rem 2.5rem;
-  }
-  
-  h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-  }
-  
-  h2 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--muted);
-    margin: 0 0 0.5rem 0;
-  }  
-  
-  h3 {
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-  }
-  
-  section {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  
-  .category-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    margin: 0.35rem 0;
-  }
-  
-  select {
-    width: 100%;
-    padding: 0.45rem 0.5rem;
-    font-size: 0.9rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: #fff;
-    color: var(--text);
-  }
-  
-  select:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-  
-  #magicBtn {
-    display: inline-block;
-    margin: 1.25rem auto 0;
-    padding: 0.55rem 1.5rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #fff;
-    background: var(--accent);
-    border: none;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
-  }
-  
-  #magicBtn:hover {
-    background: var(--accent-hover);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
-  }
-  
-  #magicBtn:active {
-    transform: translateY(1px);
-  }
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --border: #e5e7eb;
+}
 
-  @keyframes magicSwap {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    40% {
-      opacity: 0;
-      transform: translateY(-6px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* ===============================
+   Global Reset & Layout
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===============================
+   Header
+================================ */
+h1 {
+  margin: 0;
+  padding: 1.25rem 1rem 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+/* ===============================
+   Main Content
+================================ */
+main {
+  flex: 1;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 1rem 1rem 6rem; /* space for footer */
+  width: min(100%, 560px);
+  align-items: center;
+}
+
+/* ===============================
+   Sections / Cards
+================================ */
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ===============================
+   Category Checkboxes
+================================ */
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0.35rem 0;
+}
+
+/* ===============================
+   Select Inputs
+================================ */
+select {
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+
+/* ===============================
+   Magic Button
+================================ */
+#buttonDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+#magicBtn {
+  padding: 0.55rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+#magicBtn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+#magicBtn:active {
+  transform: translateY(1px);
+}
+
+/* ===============================
+   Animations
+================================ */
+@keyframes magicSwap {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .magic-animate {
-    animation: magicSwap 0.35s ease;
+  40% {
+    opacity: 0;
+    transform: translateY(-6px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.magic-animate {
+  animation: magicSwap 0.35s ease;
+}
