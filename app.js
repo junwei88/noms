@@ -35,7 +35,7 @@ async function init() {
   magicBtn.addEventListener('click', magicPick);
 
   daySelect.value = getTodayName();
-  onDayChange();
+  onDayChange(); 
 }
 
 // ===== LOAD DATA =====
@@ -205,3 +205,24 @@ function magicPick() {
   });
 }
   
+  
+// ===== SPLASH SCREEN =====
+(function () {
+  const hideSplash = () => {
+    const splash = document.getElementById('splash');
+    if (!splash) return;
+
+    splash.style.opacity = '0';
+    setTimeout(() => splash.remove(), 300);
+  };
+
+  if (document.readyState === 'complete') {
+    // Page already loaded
+    setTimeout(hideSplash, 2000);
+  } else {
+    // Wait for full load
+    window.addEventListener('load', () => {
+      setTimeout(hideSplash, 2000);
+    });
+  }
+})();
